@@ -1,0 +1,29 @@
+﻿@model HomeDTO
+
+
+<div class="card mt-3 bg-dark text-white">
+    <div class="card-body">
+        <h3 class="card-title text-center">Mi experiencia laboral</h3>
+        <div class="row mt-5">
+            @if (Model.Experience.Count() > 0)
+            {
+                @foreach (var item in Model.Experience)
+                {
+                    <div class="card mt-1 bg-light text-black">
+                        <div class="card-body">
+                            <h3 class="card-title text-center">@item.Name</h3>
+                            <div class="row mt-5">
+                                @item.Description
+                                <span>@item.InitDate - @item.EndDate</span>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>No hay registros</p>
+            }
+        </div>
+    </div>
+</div>
